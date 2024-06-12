@@ -16,7 +16,18 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+
+	//	@GetMapping
+//	public List<Employee> findAll() {
+//		return employeeRepository.findAll();
+//	}
+
+//    @GetMapping
+//    public List<Employee> findAll() {
+//        return employeeRepository.searchAll();
+//    }
+
+	// com paginação
 	@GetMapping
 	public Page<Employee> findAll(Pageable pageable) {
 		return employeeRepository.searchAll(pageable);
